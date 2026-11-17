@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090b13">
+<title>LifeOS | Your day, organized</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#090b13;--panel:#111522;--panel2:#151b2b;--line:#242c40;--text:#f1f3fb;--muted:#929bb2;--purple:#9b7bff;--cyan:#55d9e8;--green:#6fe0b0;--danger:#ff7f98;--radius:20px}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#20183d 0,transparent 35%),radial-gradient(ellipse at 95% 20%,#102b39 0,transparent 30%),var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh}
+button,input,textarea,select{font:inherit}button{cursor:pointer;color:inherit}.app{max-width:1440px;margin:auto;padding:26px 30px 50px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:30px}.brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--purple),var(--cyan));display:grid;place-items:center;color:#080b14;font-weight:900;font-family:'Space Grotesk';font-size:21px;box-shadow:0 8px 30px #8d73ff40}.brandname{font:700 21px 'Space Grotesk';letter-spacing:-.7px}.brandname span{color:var(--purple)}.tagline{font-size:11px;color:var(--muted);margin-top:2px}.topright{display:flex;align-items:center;gap:12px}.datepill,.iconbtn{border:1px solid var(--line);background:#111522c9;border-radius:12px;padding:10px 13px;color:var(--muted);font-size:12px}.iconbtn{font-size:17px;width:40px;height:40px;padding:0}.welcome{display:flex;justify-content:space-between;align-items:end;margin:24px 0 22px;gap:20px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--cyan);font-weight:700}.welcome h1{font:600 clamp(28px,4vw,40px) 'Space Grotesk';letter-spacing:-1.5px;margin:8px 0 5px}.welcome p{color:var(--muted);margin:0;font-size:14px}.quote{font-size:12px;color:#b6a9e9;background:#9b7bff12;border:1px solid #9b7bff35;padding:12px 16px;border-radius:14px;max-width:260px;line-height:1.5}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:17px}.stat,.widget{background:linear-gradient(145deg,#151a29ee,#101522f2);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 12px 35px #00000018}.stat{padding:17px 18px;display:flex;align-items:center;gap:13px}.staticon{width:39px;height:39px;border-radius:13px;display:grid;place-items:center;font-size:18px;background:#9b7bff18}.stat:nth-child(2) .staticon{background:#55d9e818}.stat:nth-child(3) .staticon{background:#6fe0b018}.stat:nth-child(4) .staticon{background:#ffb86b18}.statlabel{font-size:11px;color:var(--muted)}.statvalue{font:700 22px 'Space Grotesk';margin-top:2px}.layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:16px;align-items:start}.column{display:grid;gap:16px}.widget{padding:20px;min-width:0}.widgethead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:12px}.widgettitle{font:600 16px 'Space Grotesk';display:flex;align-items:center;gap:9px}.widgettitle .emoji{font-size:17px}.subtle{color:var(--muted);font-size:11px}.taskinput{display:flex;gap:8px;margin-bottom:13px}.field{background:#0c101b;border:1px solid var(--line);color:var(--text);border-radius:11px;padding:11px 12px;outline:none;min-width:0;width:100%;font-size:13px}.field:focus{border-color:#9b7bff99;box-shadow:0 0 0 3px #9b7bff15}.primary{border:0;background:linear-gradient(120deg,#9272f7,#6a8dff);border-radius:11px;padding:0 16px;font-size:12px;font-weight:700;white-space:nowrap}.tasklist{display:grid;gap:7px}.task{display:flex;align-items:center;gap:10px;background:#0d1220;border:1px solid #20283a;border-radius:12px;padding:10px 11px}.task input{accent-color:var(--purple);width:16px;height:16px}.taskname{font-size:13px;flex:1;overflow-wrap:anywhere}.task.done .taskname{text-decoration:line-through;color:#68738a}.delete{border:0;background:transparent;color:#69748d;font-size:17px;padding:2px 5px}.delete:hover{color:var(--danger)}.empty{color:#737e96;text-align:center;font-size:12px;padding:20px 0}.notes{min-height:165px;resize:vertical;line-height:1.6}.notehint{font-size:10px;color:#73809a;margin-top:8px}.timerdisplay{text-align:center;font:600 clamp(42px,7vw,60px) 'Space Grotesk';letter-spacing:2px;margin:14px 0 18px;font-variant-numeric:tabular-nums}.timercontrols{display:flex;justify-content:center;gap:8px}.softbtn{border:1px solid var(--line);background:#171d2d;border-radius:10px;padding:9px 14px;font-size:11px}.softbtn:hover{border-color:#8770dc}.softbtn.active{background:#9272f722;border-color:#9272f788}.goal{margin:14px 0}.goalrow{display:flex;justify-content:space-between;font-size:12px;margin-bottom:8px}.goalrow span:last-child{color:var(--muted)}.progress{height:7px;background:#252c3d;border-radius:20px;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,var(--purple),var(--cyan));border-radius:20px;transition:width .25s}.goaladd{display:flex;gap:8px;margin-top:15px}.goaladd .field{padding:9px 10px}.goaladd .primary{padding:0 12px}.quickgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.quick{background:#0d1220;border:1px solid var(--line);border-radius:13px;padding:13px;text-align:left}.quick:hover{border-color:#9272f7}.quick b{display:block;font-size:12px;margin-bottom:4px}.quick span{font-size:10px;color:var(--muted)}.calc{background:#0b101c;border:1px solid var(--line);border-radius:15px;padding:13px}.calcdisplay{text-align:right;font:500 27px 'Space Grotesk';padding:10px 6px 15px;min-height:53px;overflow:hidden}.keys{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.key{border:1px solid #252d40;background:#171e2e;border-radius:10px;padding:12px 5px;font-size:14px}.key:hover{background:#242d43}.key.op{color:var(--cyan)}.key.equal{background:linear-gradient(135deg,#9272f7,#6a8dff);border:0}.key.clear{color:var(--danger)}.footer{text-align:center;color:#65718a;font-size:10px;margin-top:24px}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#1a2335;border:1px solid #3b4965;padding:11px 16px;border-radius:12px;font-size:12px;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.quote{display:none}}@media(max-width:520px){.app{padding:18px 14px 35px}.topbar{margin-bottom:22px}.datepill{display:none}.welcome{margin:15px 0 18px}.welcome h1{font-size:30px}.stats{gap:8px}.stat{padding:12px 10px;gap:9px}.staticon{width:33px;height:33px}.statvalue{font-size:19px}.widget{padding:16px}.taskinput{gap:6px}.primary{padding:0 12px}.quickgrid{gap:7px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+ <div class="brand"><div class="logo">L</div><div><div class="brandname">Life<span>OS</span></div><div class="tagline">YOUR PERSONAL COMMAND CENTER</div></div></div>
+ <div class="topright"><div class="datepill" id="today"></div><button class="iconbtn" id="resetDay" title="Reset completed tasks">↻</button></div>
+</header>
+<section class="welcome">
+ <div><div class="eyebrow">YOUR SPACE. YOUR PACE.</div><h1 id="greeting">Welcome back.</h1><p>Make today count, one small win at a time.</p></div>
+ <div class="quote" id="quote">“Great things are done by a series of small things brought together.”</div>
+</section>
+<section class="stats">
+ <div class="stat"><div class="staticon">✓</div><div><div class="statlabel">Tasks completed</div><div class="statvalue" id="completedStat">0</div></div></div>
+ <div class="stat"><div class="staticon">⚡</div><div><div class="statlabel">Tasks remaining</div><div class="statvalue" id="remainingStat">0</div></div></div>
+ <div class="stat"><div class="staticon">🎯</div><div><div class="statlabel">Active goals</div><div class="statvalue" id="goalStat">0</div></div></div>
+ <div class="stat"><div class="staticon">📈</div><div><div class="statlabel">Daily completion</div><div class="statvalue" id="percentStat">0%</div></div></div>
+</section>
+<main class="layout">
+ <div class="column">
+  <section class="widget">
+   <div class="widgethead"><div class="widgettitle"><span class="emoji">☑️</span> Today's tasks</div><span class="subtle" id="taskCount">0 tasks</span></div>
+   <form class="taskinput" id="taskForm"><input class="field" id="taskInput" placeholder="Add something you want to get done..." maxlength="100" autocomplete="off"><button class="primary">Add task +</button></form>
+   <div class="tasklist" id="taskList"></div>
+  </section>
+  <section class="widget">
+   <div class="widgethead"><div class="widgettitle"><span class="emoji">📝</span> Quick notes</div><span class="subtle">Autosaves on this device</span></div>
+   <textarea class="field notes" id="notes" placeholder="Ideas, reminders, random thoughts..."></textarea><div class="notehint" id="noteStatus">Your notes stay in this browser.</div>
+  </section>
+  <section class="widget">
+   <div class="widgethead"><div class="widgettitle"><span class="emoji">🎯</span> Goals</div><span class="subtle">Small steps add up</span></div>
+   <div id="goalList"></div>
+   <form class="goaladd" id="goalForm"><input class="field" id="goalInput" placeholder="Add a goal..." maxlength="60"><button class="primary">Add</button></form>
+  </section>
+ </div>
+ <aside class="column">
+  <section class="widget">
+   <div class="widgethead"><div class="widgettitle"><span class="emoji">⏱️</span> Focus timer</div><span class="subtle">FOCUS MODE</span></div>
+   <div class="timerdisplay" id="timer">25:00</div>
+   <div class="timercontrols"><button class="softbtn active" data-min="25">25 min</button><button class="softbtn" data-min="5">5 min</button><button class="softbtn" data-min="15">15 min</button></div>
+   <div class="timercontrols" style="margin-top:10px"><button class="primary" id="timerToggle" style="padding:10px 22px">Start focus</button><button class="softbtn" id="timerReset">Reset</button></div>
+  </section>
+  <section class="widget">
+   <div class="widgethead"><div class="widgettitle"><span class="emoji">🧮</span> Calculator</div><span class="subtle">QUICK MATH</span></div>
+   <div class="calc"><div class="calcdisplay" id="calcDisplay">0</div><div class="keys" id="calcKeys">
+    <button class="key clear" data-v="C">AC</button><button class="key op" data-v="(">(</button><button class="key op" data-v=")">)</button><button class="key op" data-v="/">÷</button>
+    <button class="key" data-v="7">7</button><button class="key" data-v="8">8</button><button class="key" data-v="9">9</button><button class="key op" data-v="*">×</button>
+    <button class="key" data-v="4">4</button><button class="key" data-v="5">5</button><button class="key" data-v="6">6</button><button class="key op" data-v="-">−</button>
+    <button class="key" data-v="1">1</button><button class="key" data-v="2">2</button><button class="key" data-v="3">3</button><button class="key op" data-v="+">+</button>
+    <button class="key" data-v="0">0</button><button class="key" data-v=".">.</button><button class="key" data-v="back">⌫</button><button class="key equal" data-v="=">=</button>
+   </div></div>
+  </section>
+  <section class="widget">
+   <div class="widgethead"><div class="widgettitle"><span class="emoji">🚀</span> Quick launch</div></div>
+   <div class="quickgrid">
+    <button class="quick" data-action="task"><b>＋ New task</b><span>Put it on the list</span></button>
+    <button class="quick" data-action="note"><b>✎ Write a note</b><span>Capture that thought</span></button>
+    <button class="quick" data-action="focus"><b>◷ Start focus</b><span>25 minutes of deep work</span></button>
+    <button class="quick" data-action="goal"><b>◎ New goal</b><span>Pick your next milestone</span></button>
+   </div>
+  </section>
+ </aside>
+</main>
+<div class="footer">LIFEOS · VERSION 1.0 · YOUR DATA STAYS ON THIS DEVICE</div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const $=id=>document.getElementById(id);
+const store={get:(k,d)=>{try{return JSON.parse(localStorage.getItem('lifeos_'+k))??d}catch{return d}},set:(k,v)=>localStorage.setItem('lifeos_'+k,JSON.stringify(v))};
+let tasks=store.get('tasks',[]),goals=store.get('goals',[{id:1,name:'Build a consistent routine',progress:0}]);
+const today=new Date();$('today').textContent=today.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric',year:'numeric'});
+$('greeting').textContent=(today.getHours()<12?'Good morning.':today.getHours()<18?'Good afternoon.':'Good evening.');
+const quotes=['“Great things are done by a series of small things brought together.”','“You do not have to see the whole staircase. Just take the first step.”','“Progress is progress, no matter how small.”','“Focus on what you can do today.”'];$('quote').textContent=quotes[today.getDate()%quotes.length];
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1900)}
+function renderTasks(){const list=$('taskList');list.innerHTML='';tasks.forEach(t=>{const row=document.createElement('div');row.className='task'+(t.done?' done':'');const check=document.createElement('input');check.type='checkbox';check.checked=t.done;check.addEventListener('change',()=>{t.done=check.checked;saveTasks()});const name=document.createElement('span');name.className='taskname';name.textContent=t.name;const del=document.createElement('button');del.className='delete';del.textContent='×';del.title='Delete task';del.addEventListener('click',()=>{tasks=tasks.filter(x=>x.id!==t.id);saveTasks()});row.append(check,name,del);list.append(row)});if(!tasks.length)list.innerHTML='<div class="empty">Nothing on the list yet. Add your first task above ✨</div>';const done=tasks.filter(t=>t.done).length,remaining=tasks.length-done;$('completedStat').textContent=done;$('remainingStat').textContent=remaining;$('percentStat').textContent=(tasks.length?Math.round(done/tasks.length*100):0)+'%';$('taskCount').textContent=tasks.length+' task'+(tasks.length===1?'':'s')}
+function saveTasks(){store.set('tasks',tasks);renderTasks()}
+$('taskForm').addEventListener('submit',e=>{e.preventDefault();const v=$('taskInput').value.trim();if(!v)return;tasks.unshift({id:Date.now(),name:v,done:false});$('taskInput').value='';saveTasks()});
+function renderGoals(){const list=$('goalList');list.innerHTML='';goals.forEach(g=>{const wrap=document.createElement('div');wrap.className='goal';const row=document.createElement('div');row.className='goalrow';const label=document.createElement('span');label.textContent=g.name;const value=document.createElement('span');value.textContent=g.progress+'%';row.append(label,value);const barbg=document.createElement('div');barbg.className='progress';const bar=document.createElement('div');bar.className='bar';bar.style.width=g.progress+'%';barbg.append(bar);const controls=document.createElement('div');controls.style.cssText='display:flex;gap:7px;margin-top:8px';const range=document.createElement('input');range.type='range';range.min=0;range.max=100;range.value=g.progress;range.style.cssText='flex:1;accent-color:#9b7bff';range.addEventListener('input',()=>{g.progress=Number(range.value);saveGoals()});const del=document.createElement('button');del.className='delete';del.textContent='×';del.addEventListener('click',()=>{goals=goals.filter(x=>x.id!==g.id);saveGoals()});controls.append(range,del);wrap.append(row,barbg,controls);list.append(wrap)});if(!goals.length)list.innerHTML='<div class="empty">Your next big thing starts here.</div>';$('goalStat').textContent=goals.length}
+function saveGoals(){store.set('goals',goals);renderGoals()}
+$('goalForm').addEventListener('submit',e=>{e.preventDefault();const v=$('goalInput').value.trim();if(!v)return;goals.push({id:Date.now(),name:v,progress:0});$('goalInput').value='';saveGoals()});
+$('notes').value=store.get('notes','');$('notes').addEventListener('input',()=>{store.set('notes',$('notes').value);$('noteStatus').textContent='Saved ✓'});
+$('resetDay').addEventListener('click',()=>{if(confirm('Mark all tasks as not completed? Your tasks will stay on the list.')){tasks.forEach(t=>t.done=false);saveTasks();toast('Tasks reset')}})
+let duration=25*60,left=duration,running=false,interval=null;
+function showTimer(){const m=Math.floor(left/60),s=left%60;$('timer').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')}
+function stopTimer(){running=false;clearInterval(interval);$('timerToggle').textContent='Start focus'}
+function startTimer(){if(running){stopTimer();return}running=true;$('timerToggle').textContent='Pause';interval=setInterval(()=>{left--;showTimer();if(left<=0){stopTimer();toast('Focus session complete! Great work.');left=duration;showTimer()}},1000)}
+$('timerToggle').addEventListener('click',startTimer);$('timerReset').addEventListener('click',()=>{stopTimer();left=duration;showTimer()});
+document.querySelectorAll('[data-min]').forEach(b=>b.addEventListener('click',()=>{stopTimer();document.querySelectorAll('[data-min]').forEach(x=>x.classList.remove('active'));b.classList.add('active');duration=Number(b.dataset.min)*60;left=duration;showTimer()}));
+let expression='';function showCalc(){$('calcDisplay').textContent=expression||'0'}
+$('calcKeys').addEventListener('click',e=>{const b=e.target.closest('button[data-v]');if(!b)return;const v=b.dataset.v;if(v==='C')expression='';else if(v==='back')expression=expression.slice(0,-1);else if(v==='='){if(!expression)return;try{if(!/^[0-9+*/().\s-]+$/.test(expression))throw Error();const result=Function('"use strict";return ('+expression+')')();if(!Number.isFinite(result))throw Error();expression=String(Math.round(result*1e8)/1e8)}catch{expression='Error';setTimeout(()=>{if(expression==='Error'){expression='';showCalc()}},1000)}}else{if(expression==='Error')expression='';if(expression.length<40)expression+=v}showCalc()});
+document.querySelectorAll('[data-action]').forEach(b=>b.addEventListener('click',()=>{const a=b.dataset.action;if(a==='task')$('taskInput').focus();if(a==='note')$('notes').focus();if(a==='goal')$('goalInput').focus();if(a==='focus'){document.querySelector('[data-min="25"]').click();if(!running)startTimer();$('timer').scrollIntoView({behavior:'smooth',block:'center'})}}));
+renderTasks();renderGoals();showTimer();
+</script>
+</body>
+</html>
